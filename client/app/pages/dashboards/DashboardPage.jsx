@@ -193,7 +193,7 @@ function DashboardControl({ dashboardOptions }) {
 
   return (
     <div className="col-xs-4 col-sm-5 col-lg-5 text-right dashboard-control p-r-0">
-      {dashboard.is_archived && <Button onClick={unarchiveDashboard}>Unarchive</Button>}
+      {dashboard.can_edit && dashboard.is_archived && <Button onClick={unarchiveDashboard}>Unarchive</Button>}
       {!dashboard.is_archived && (
         <span className="hidden-print">
           {showPublishButton && (
