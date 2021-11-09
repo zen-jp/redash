@@ -24,7 +24,7 @@ pipeline {
         stage('Docker build'){
             steps {
                  script {
-                     sh "docker build -t ${ECR_REPO_NAME}:${BRANCH} -f .Dockerfile . --no-cache"
+                     sh "docker build -t ${ECR_REPO_NAME}:${BRANCH} . --no-cache"
                  }
             }
         }
