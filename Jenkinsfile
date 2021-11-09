@@ -1,6 +1,6 @@
 def ECR_REPO_NAME = "redash"
 def AWS_REGION = ["ap-northeast-1"]
-def BRANCH
+def BRANCH = env.BRANCH_NAME
 
 pipeline {
 
@@ -18,7 +18,6 @@ pipeline {
     environment {
         DOCKER_PATH = tool (name: "docker-latest", type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool')
         AWS_ACCOUNT = sh (script: "aws sts get-caller-identity | jq -r '.Account'", returnStdout: true).trim()
-        BRANCH = env.BRANCH_NAME
     }
 
     stages {
