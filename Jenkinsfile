@@ -1,6 +1,6 @@
 def ECR_REPO_NAME = "redash"
 def AWS_REGION = ["ap-northeast-1"]
-def BRANCH_NAME
+def BRANCH
 
 pipeline {
 
